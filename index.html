@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>易物购</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./css/bass.css"/>
+    <link rel="stylesheet" href="./css/fonts.css"/> 
+    <link rel="stylesheet" href="./css/index.css"/>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/less/less.js"></script>
+    <script src="./lib/template.js"></script>
+</head>
+<body>
+<div class="layout">
+    <header class="header">
+        <a class="logo" href="#logo" id="logo">
+           <span class="font-n">易物购</span>
+           <span class="font-g">全网比价折扣最低</span>
+           <span class="font-w">m.yiwugou.com</span>
+        </a>
+        <a class="app" href="#">
+            <img src="./images/header_app.png" alt="手机APP"/>
+        </a>
+    </header>
+    <!--搜索栏-->
+    <div class="search" id="search">
+        <div class="input-text">
+            <input class="search-text" type="text" placeholder="请输入你想比价的商品"
+                   id="search-text"/>
+        </div>
+        <div class="input-btn">
+            <input type="button" id=search-"btn" value="搜索"/>
+        </div>
+    </div>
+    <!--菜单栏-->
+    <div class="menu clearfix" id="menu">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="font-ico ico_fenLei"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_hui"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_zhe"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_te"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_juan"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_tuan"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_shang"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="font-ico ico_pin"></div>
+            </div>
+        </div>
+    </div>
+    <!--产品头部-->
+    <div class="product">
+        <div class="product-top">
+            <span>超值折扣推荐</span>
+            <img src="./images/尖括号-圆-右.png" alt=""/>
+        </div>
+        <div class="product-content" id="product-content">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="more">
+            <a href="#">更多优惠信息 <img src="./images/shuang.png" alt=""/></a>
+        </div>
+    </div>
+    <!--排行榜-->
+    <div class="list">
+        <a href="">品牌排行</a>
+    </div>
+    <!--底部部分-->
+    <div class="footer">
+        <ul class="clearfix">
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#logo">
+                <img src="./images/shang.png" alt=""/>
+                   返回顶部</a></li>
+        </ul>
+        <p><a href="#">手机APP下载</a> 慢慢买手机版--掌上比价平台</p>
+        <p>m.manmanbuy.com/</p>
+    </div>
+</div>
+<!--头部-->
+
+</body>
+<!--产品部分-->
+<script type="text/html" id="product-template">
+     {{ each result as value}}
+        <li id="{{value.productId}}">
+            <a href="javascript:;">
+                <div>{{#value.productImgSm}}</div>
+                <div>
+                    <div>{{value.productName}}<span>{{value.productPinkage}}</span> </div>
+                    <div>
+                        {{value.productFrom}}
+                        <span>{{value.productTime}}</span>
+                        <span>{{value.productComCount}}</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+   {{/each}}
+</script>
+<script type="text/javascript" src="./js/index.js"></script>
+
+</html>
